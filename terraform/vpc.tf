@@ -5,7 +5,8 @@ module "vpc" {
   name = "vprofile-eks"
 
   cidr = "172.20.0.0/16"
-  azs = slice(data.aws_availability_zones.available.names, 0, min(3, length(data.aws_availability_zones.available.names)))
+azs = slice(data.aws_availability_zones.available.names, 0, min(3, length(data.aws_availability_zones.available.names)))
+
 
 
   private_subnets = ["172.20.1.0/24", "172.20.2.0/24", "172.20.3.0/24"]
